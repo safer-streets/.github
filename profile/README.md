@@ -13,12 +13,15 @@
     . .venv/bin/activate
     ```
 
+    NB using `uv sync` to manage dependencies is not recommended (by default it will uninstall anything that isn't a
+    direct dependency, unless you pass the `--inexact` flag)
+
 1. Clone and install `safer-streets-core`. This will include the basic dependencies and some useful scripts (see below):
 
     ```sh
     git clone git@github.com:safer-streets/safer-streets-core
     cd safer-streets-core
-    uv pip install . --dev
+    uv pip install -e . --group dev
     cd ..
     ```
 
@@ -28,16 +31,21 @@
     git clone git@github.com:safer-streets/safer-streets-eda
     ```
 
-1. Install extra dependencies required by the EDA notebooks
+1. Install extra dependencies required by the EDA notebooks.
 
     ```sh
-    uv pip install -r safer-streets-eda/requirements.txt
+    cd safer-streets-eda
+    uv pip install -e . --group dev
+    cd ..
     ```
 
-1. (Optional) clone the apps repo
+1. (Optional) clone the apps repo and install it's dependencies
 
     ```
     git clone git@github.com:safer-streets/safer-streets-apps
+    cd safer-streets-apps
+    uv pip install -e . --group dev
+    cd ..
     ```
 
 1.  Download and extract the last 3 years of public crime data:
@@ -49,6 +57,7 @@
 1.  Manually install geospatial datasets...
 
 
-NB Documentation is developed within a separate environment see the README at the [blog/project site](https://github.com/safer-streets/safer-streets-eda)
+NB Documentation is developed within a separate environment - see the README at the
+[blog/project site](https://github.com/safer-streets/safer-streets-eda)
 
 
