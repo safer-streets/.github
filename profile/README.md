@@ -58,6 +58,6 @@
 
 
 NB Documentation is developed within a separate environment - see the README at the
-[blog/project site](https://github.com/safer-streets/safer-streets-eda)
+[blog/project site](https://github.com/safer-streets/site)
 
 
