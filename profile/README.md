@@ -4,7 +4,7 @@
 
 1. Create a folder to contain all the repos (e.g. `safer-streets`)
 
-2. In that folder create a `.env` file containing definitions for `SAFER_STREETS_DATA_DIR` (where you intend to cache data - absolute path recommended) and `NOMIS_API_KEY` (if you will be downloading census data)
+2. In that folder create a `.env` file containing definitions for `SAFER_STREETS_DATA_DIR` (where you intend to cache data - absolute path recommended) `SAFER_STREETS_API_URL`, `SAFER_STREETS_API_KEY` and `NOMIS_API_KEY` (if you will be downloading census data). Also if necessary put other credentials in here, e.g. Azure, Github, Gemini.
 
 3. Create and activate a python venv. [uv](https://docs.astral.sh/uv/) is highly recommended for managing the environment, e.g.:
 
