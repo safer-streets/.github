@@ -54,7 +54,7 @@
     extract latest
     ```
 
-1.  Manually install geospatial datasets...
+1.  Manually install geospatial datasets. Easiest option is to take a copy all the top-level files from our Azure blob sotrage
 
 
 NB Documentation is developed within a separate environment - see the README at the
