@@ -57,20 +57,20 @@ Azure Blob Storage · Jupyter / [marimo](https://marimo.io) · Streamlit · [Zen
     uv sync --dev
     ```
 
-1. Get the data. The preferred route is to query the prebuilt GeoParquet directly from blob storage with an in-memory
-    DuckDB — this needs only `AZURE_STORAGE_CONNSTR`, and nothing is downloaded up front.
+1. Get the data. The preferred route is to query the prebuilt (Geo)Parquet directly from blob storage with an in-memory
+    DuckDB - this has little or no overhead over local storage and needs only `AZURE_STORAGE_CONNSTR` - nothing is
+    downloaded up front.
 
-    Data supplied in confidence (e.g. the Home Office hotspot hexes) never goes to the cloud, so to work with it you
-    must build locally:
+    Data supplied in confidence never goes to the cloud, so to work with it you must store it locally. If you want to
+    work with *all* the data locally:
 
     ```sh
     cd safer-streets-tooling
-    uv run data build
+    uv run data sync --update newer
     ```
 
-    Most sources download automatically, but a few require a login and must be fetched manually. See the
-    [tooling README](https://github.com/safer-streets/safer-streets-tooling#usage) for details, including
-    `uv run data sync` for reconciling a local data directory with the cloud.
+    If you intend to change or extend the data extracts or transforms, see the
+    [tooling README](https://github.com/safer-streets/safer-streets-tooling#usage) for further details.
 
 Each repo's own `README` covers anything specific to it.
 
